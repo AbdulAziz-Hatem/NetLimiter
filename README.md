@@ -26,6 +26,21 @@ Whether you are a developer testing mobile applications under poor network condi
 
 ---
 
+## ♿ Accessibility Improvements
+
+This fork includes comprehensive accessibility enhancements for users relying on screen readers (TalkBack):
+
+* **All FAB buttons** (Start/Stop VPN) — added `contentDescription` for clear voice feedback.
+* **All Toolbar navigation icons** (back/up buttons) — added `navigationContentDescription` so screen readers announce "Navigate up".
+* **Dashboard clickable cards** (Throttle, DNS, HTTP/MITM, Analytics) — added `contentDescription` reflecting the card's purpose.
+* **Work Mode Selector** button — added `contentDescription` describing the current mode.
+* **App Chooser toolbar** — added `contentDescription` for the toolbar title and navigation.
+* **DNS clear-all button** — added `contentDescription` identifying the action.
+
+These changes make the app fully operable with TalkBack without any UI visual modifications.
+
+---
+
 ## 🌟 Why NetLimiter? (Target & Goal)
 
 Most modern applications consume massive amounts of background data, leaking user privacy, draining battery life, and consuming expensive cellular bandwidth. NetLimiter was developed to solve this by giving users **absolute control** over their network traffic.
