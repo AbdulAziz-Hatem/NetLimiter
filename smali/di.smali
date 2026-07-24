@@ -122,7 +122,7 @@
 
     packed-switch v1, :pswitch_data_0
 
-    goto/16 :goto_4
+    goto/16 :goto_5
 
     :pswitch_0
     iget-object v1, v0, Ldi;->e:Ljava/lang/Object;
@@ -398,23 +398,31 @@
 
     if-eq v15, v14, :cond_6
 
-    goto :goto_3
+    goto :goto_4
 
     .line 41
     :cond_6
+    invoke-virtual {v1}, Lcom/alisakkaf/networklimiter/ui/DashboardActivity;->z()Lcom/alisakkaf/networklimiter/widget/StartingButton;
+
+    move-result-object v2
+
+    sget-object v3, Lcom/alisakkaf/networklimiter/service/a$a;->d:Lcom/alisakkaf/networklimiter/service/a$a;
+
+    invoke-virtual {v2, v3}, Lcom/alisakkaf/networklimiter/widget/StartingButton;->setStatus(Lcom/alisakkaf/networklimiter/service/a$a;)V
+
     invoke-virtual {v1}, Lcom/alisakkaf/networklimiter/ui/DashboardActivity;->y()Lcom/alisakkaf/networklimiter/service/a;
 
     move-result-object v1
 
     invoke-interface {v1}, Lcom/alisakkaf/networklimiter/service/a;->b()V
 
-    goto :goto_3
+    goto :goto_4
 
     .line 42
     :cond_7
     iget-object v14, v1, Lcom/alisakkaf/networklimiter/ui/DashboardActivity;->F:Lem0;
 
-    if-eqz v14, :cond_a
+    if-eqz v14, :cond_b
 
     .line 43
     iget-object v13, v14, Lem0;->a:Landroid/content/SharedPreferences;
@@ -428,7 +436,15 @@
     .line 44
     invoke-virtual {v1}, Lcom/alisakkaf/networklimiter/ui/DashboardActivity;->w()V
 
-    goto :goto_3
+    invoke-virtual {v1}, Lcom/alisakkaf/networklimiter/ui/DashboardActivity;->z()Lcom/alisakkaf/networklimiter/widget/StartingButton;
+
+    move-result-object v2
+
+    sget-object v3, Lcom/alisakkaf/networklimiter/service/a$a;->f:Lcom/alisakkaf/networklimiter/service/a$a;
+
+    invoke-virtual {v2, v3}, Lcom/alisakkaf/networklimiter/widget/StartingButton;->setStatus(Lcom/alisakkaf/networklimiter/service/a$a;)V
+
+    goto :goto_4
 
     .line 45
     :cond_8
@@ -561,4 +577,8 @@
         :pswitch_1
         :pswitch_0
     .end packed-switch
+    
+    .line 65
+    :goto_5
+    return-void
 .end method
