@@ -38,7 +38,6 @@ jobs:
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y -qq android-sdk aapt zipalign
-          # Install apksigner from Android command-line tools
           mkdir -p ~/android-cmdline-tools
           cd ~/android-cmdline-tools
           wget -q "https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip" -O cmdline-tools.zip
@@ -59,6 +58,11 @@ jobs:
         run: |
           apktool b . --output NetLimiter-unsigned.apk
 
+      - name: 📐 Page-align native libraries (zipalign -p)
+        run: |
+          zipalign -p -f -v 4 NetLimiter-unsigned.apk NetLimiter-aligned.apk
+          echo "✅ Page alignment done!"
+
       - name: 🔏 Decode keystore and sign APK
         run: |
           base64 -d keystore/netlimiter-release.keystore.b64 > netlimiter-release.keystore
@@ -68,7 +72,7 @@ jobs:
             --ks-pass pass:netlimiter123 \
             --key-pass pass:netlimiter123 \
             --out NetLimiter-signed.apk \
-            NetLimiter-unsigned.apk
+            NetLimiter-aligned.apk
           echo "✅ APK signed successfully!"
 
       - name: 📱 Verify APK signature
@@ -85,4 +89,4 @@ jobs:
       - name: 📏 Check signed APK size
         run: |
           ls -lh NetLimiter-signed.apk
-          echo "✅ Build complete! Signed APK is available in the Artifacts section above."
+          echo "✅ Build complete! Signed & page-aligned APK is available."
