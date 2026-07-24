@@ -10,6 +10,14 @@
                 android:data="https://github.com/alisakkaf" />
         </Preference>
         <Preference
+            android:icon="@drawable/ic_github"
+            android:title="@string/pref_fork_github_title"
+            android:summary="@string/pref_fork_github_summary">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://github.com/AbdulAziz-Hatem/NetLimiter" />
+        </Preference>
+        <Preference
             android:icon="@drawable/ic_facebook"
             android:title="@string/pref_facebook_title"
             android:summary="https://www.facebook.com/AliSakkaf.Dev/">
@@ -28,6 +36,12 @@
         <Preference
             android:icon="@drawable/ic_developer"
             android:title="@string/pref_dev_info_title"
+            android:selectable="false" />
+        <Preference
+            android:key="a11y_contributor"
+            android:icon="@drawable/ic_developer"
+            android:title="@string/pref_a11y_contributor_title"
+            android:summary="@string/pref_a11y_contributor_summary"
             android:selectable="false" />
         <Preference
             android:key="version"
