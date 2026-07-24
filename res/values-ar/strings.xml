@@ -149,4 +149,7 @@
     <string name="pref_fork_github_summary">github.com/AbdulAziz-Hatem/NetLimiter</string>
     <string name="pref_a11y_contributor_title">♿ تحسينات إمكانية الوصول</string>
     <string name="pref_a11y_contributor_summary">بمساهمة AbdulAziz-Hatem — دعم TalkBack لجميع الأزرار وشرائط التنقل</string>
+
+    <!-- Profile detail button - Arabic -->
+    <string name="show_detail_description">عرض تفاصيل الملف</string>
 </resources>
