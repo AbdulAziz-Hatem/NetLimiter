@@ -143,4 +143,10 @@
     <string name="pref_dev_info_title">تطوير وتعديل بواسطة AliSakkaf</string>
     <string name="pref_thanks_title">شكر خاص</string>
     <string name="pref_thanks_summary">شكر خاص للمطور الأصلي twocities</string>
+
+    <!-- Accessibility Contribution & Fork Links - Arabic -->
+    <string name="pref_fork_github_title">نسخة محسّنة للوصول (GitHub)</string>
+    <string name="pref_fork_github_summary">github.com/AbdulAziz-Hatem/NetLimiter</string>
+    <string name="pref_a11y_contributor_title">♿ تحسينات إمكانية الوصول</string>
+    <string name="pref_a11y_contributor_summary">بمساهمة AbdulAziz-Hatem — دعم TalkBack لجميع الأزرار وشرائط التنقل</string>
 </resources>
