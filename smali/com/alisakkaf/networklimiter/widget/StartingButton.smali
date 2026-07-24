@@ -53,7 +53,7 @@
 .end method
 
 .method public final setStatus(Lcom/alisakkaf/networklimiter/service/a$a;)V
-    .locals 4
+    .locals 5
 
     const-string v0, "value"
 
@@ -66,11 +66,11 @@
 
     const/4 v1, 0x1
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_4
 
     const/4 v2, 0x0
 
-    if-eq v0, v1, :cond_2
+    if-eq v0, v1, :cond_3
 
     const/4 v3, 0x2
 
@@ -111,19 +111,38 @@
     .line 6
     invoke-virtual {p0, v0}, Lcom/google/android/material/floatingactionbutton/FloatingActionButton;->setImageResource(I)V
 
+    .line 7
+    invoke-virtual {p0}, Landroid/widget/ImageButton;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    const v1, 0x7f110095
+
+    invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Landroid/widget/ImageButton;->setContentDescription(Ljava/lang/CharSequence;)V
+
     goto :goto_0
 
-    .line 7
+    .line 8
     :cond_2
     invoke-virtual {p0, v2}, Landroid/widget/ImageButton;->setEnabled(Z)V
 
     goto :goto_0
 
-    .line 8
+    .line 9
     :cond_3
+    invoke-virtual {p0, v2}, Landroid/widget/ImageButton;->setEnabled(Z)V
+
+    goto :goto_0
+
+    .line 10
+    :cond_4
     invoke-virtual {p0, v1}, Landroid/widget/ImageButton;->setEnabled(Z)V
 
-    .line 9
+    .line 11
     invoke-virtual {p0}, Landroid/widget/ImageButton;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -134,15 +153,28 @@
 
     move-result-object v0
 
-    .line 10
+    .line 12
     invoke-virtual {p0, v0}, Lcom/google/android/material/floatingactionbutton/FloatingActionButton;->setBackgroundTintList(Landroid/content/res/ColorStateList;)V
 
     const v0, 0x7f0800a8
 
-    .line 11
+    .line 13
     invoke-virtual {p0, v0}, Lcom/google/android/material/floatingactionbutton/FloatingActionButton;->setImageResource(I)V
 
-    .line 12
+    .line 14
+    invoke-virtual {p0}, Landroid/widget/ImageButton;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    const v1, 0x7f110093
+
+    invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Landroid/widget/ImageButton;->setContentDescription(Ljava/lang/CharSequence;)V
+
+    .line 15
     :goto_0
     iput-object p1, p0, Lcom/alisakkaf/networklimiter/widget/StartingButton;->v:Lcom/alisakkaf/networklimiter/service/a$a;
 
